@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { m } from 'framer-motion';
 // @mui
 import { alpha } from '@mui/material/styles';
-import { Link, Paper, Typography, CardActionArea, Rating } from '@mui/material';
+import { Link, Paper, Typography, CardActionArea, Rating, Stack } from '@mui/material';
 // components
 import Image from '../../components/image';
 
@@ -15,16 +15,19 @@ BookCard.propTypes = {
     href: PropTypes.string,
     cover_image: PropTypes.string,
     name: PropTypes.string,
+    rate: PropTypes.string,
   }),
 };
 
 export default function BookCard({ item }) {
-  const { name, cover_image, href } = item;
+  const { name, cover_image, rate, href } = item;
 
   return (
     <Link href={href} underline="none" target="_blank" rel="noopener">
       <Paper
         variant="outlined"
+        textAlign="center"
+        alignContent="center"
         sx={{ borderColor: (theme) => alpha(theme.palette.grey[500], 0.12) }}
       >
         <CardActionArea
@@ -41,11 +44,17 @@ export default function BookCard({ item }) {
           </m.div>
         </CardActionArea>
 
-        <Typography variant="subtitle2" sx={{ p: 2, textAlign: 'center' }}>
+        <Typography variant="p" sx={{ p: 2, textAlign: 'center' }}>
           {name}
         </Typography>
 
-        <Rating size="small" value={4} precision={0.1} readOnly />
+        <Stack sx={{ p: 2, textAlign: 'center' }}>
+          <Rating size="small" value={4} precision={0.1} readOnly />
+
+          <Typography variant="p" sx={{ p: 2, textAlign: 'center' }}>
+            {rate}
+          </Typography>
+        </Stack>
       </Paper>
     </Link>
   );
