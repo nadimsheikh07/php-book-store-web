@@ -10,15 +10,11 @@ import BackgroundIllustration from './BackgroundIllustration';
 function SeverErrorIllustration({ ...other }) {
   const theme = useTheme();
 
-  const PRIMARY_LIGHTER = theme.palette.primary.lighter;
-
   const PRIMARY_LIGHT = theme.palette.primary.light;
 
   const PRIMARY_MAIN = theme.palette.primary.main;
 
   const PRIMARY_DARK = theme.palette.primary.dark;
-
-  const PRIMARY_DARKER = theme.palette.primary.darker;
 
   return (
     <Box {...other}>
@@ -54,7 +50,7 @@ function SeverErrorIllustration({ ...other }) {
         />
 
         <path
-          fill={PRIMARY_DARKER}
+          fill={PRIMARY_DARK}
           d="M277.8 242.2h-33.2c-4 0-7.3 3.3-7.3 7.3v33.2c0 4 3.3 7.3 7.3 7.3h33.2c4 0 7.3-3.3 7.3-7.3v-33.2c0-4-3.3-7.3-7.3-7.3z"
         />
 
@@ -91,7 +87,7 @@ function SeverErrorIllustration({ ...other }) {
         />
 
         <path
-          fill={PRIMARY_DARKER}
+          fill={PRIMARY_DARK}
           d="M129.8 247.8c-1-7.3-2.1-14.6-5-21.4-2.9-6.7-8-12.9-14.9-15.4l-.6 31.2c-.1 6-.2 12.1 1.5 17.9 3 10.1 13.5 21.9 23.6 25.3 1.5-4.8-1-12.2-1.7-17.2l-2.9-20.4z"
         />
 
@@ -106,12 +102,12 @@ function SeverErrorIllustration({ ...other }) {
         />
 
         <path
-          fill={PRIMARY_LIGHTER}
+          fill={PRIMARY_LIGHT}
           d="M161.6 182c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4zm12 0c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4zm8 4c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zM162 226c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4zm12 0c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4zm8 4c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm52-6h-30c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1h30c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1zm-72 46c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4zm12 0c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4zm8 4c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm52-6h-30c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1h30c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1z"
         />
 
         <path
-          fill={PRIMARY_DARKER}
+          fill={PRIMARY_DARK}
           d="M264.4 267.7c.5-1.8-.8-3.7-1.2-5.5-.1-.3-.1-.7 0-1 .2-1.5 1.5-2.6 3-2.6s2.8 1.1 3 2.6c.1.3 0 .7 0 1-.3 1.8-1.6 3.8-1.1 5.6l.4 1.3c.5 1.5-.7 3.1-2.3 3.1-1.6 0-2.7-1.5-2.3-3l.5-1.5zM258 158.8l9.2-4.8 8.8 4.8s-1.6 11.8-8.6 15.2c0 0-8.6-3.3-9.4-15.2z"
         />
 

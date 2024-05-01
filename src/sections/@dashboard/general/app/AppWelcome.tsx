@@ -12,7 +12,7 @@ const StyledRoot = styled('div')(({ theme }) => ({
   display: 'flex',
   overflow: 'hidden',
   position: 'relative',
-  color: theme.palette.primary.darker,
+  color: theme.palette.primary.dark,
   borderRadius: Number(theme.shape.borderRadius) * 2,
   flexDirection: 'column',
   [theme.breakpoints.up('md')]: {

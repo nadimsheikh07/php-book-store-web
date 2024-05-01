@@ -12,8 +12,6 @@ function PlanPremiumIcon({ ...other }) {
 
   const PRIMARY_DARK = theme.palette.primary.dark;
 
-  const PRIMARY_DARKER = theme.palette.primary.darker;
-
   return (
     <Box {...other}>
       <svg width="100%" height="100%" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +20,7 @@ function PlanPremiumIcon({ ...other }) {
             <g transform="translate(9.167 19.932)">
               <path fill={PRIMARY_DARK} d="M53.333 17.441H61.666V24.915999999999997H53.333z" />
               <path
-                fill={PRIMARY_DARKER}
+                fill={PRIMARY_DARK}
                 d="M.935 20.42L25.963 8.001a5.059 5.059 0 014.52.012L60.74 23.228a1.68 1.68 0 01.015 2.996L35.417 39.301a5.059 5.059 0 01-4.694-.029L.893 23.41a1.68 1.68 0 01.042-2.99z"
               />
               <path

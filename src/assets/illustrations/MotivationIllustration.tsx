@@ -10,11 +10,9 @@ import BackgroundIllustration from './BackgroundIllustration';
 function MotivationIllustration({ ...other }) {
   const theme = useTheme();
 
-  const PRIMARY_LIGHTER = theme.palette.primary.lighter;
+  const PRIMARY_LIGHT = theme.palette.primary.light;
 
   const PRIMARY_DARK = theme.palette.primary.dark;
-
-  const PRIMARY_DARKER = theme.palette.primary.darker;
 
   return (
     <Box {...other}>
@@ -34,7 +32,7 @@ function MotivationIllustration({ ...other }) {
         />
 
         <path
-          fill={PRIMARY_DARKER}
+          fill={PRIMARY_DARK}
           d="M359.2 253.4c-1.1 3.1-2.3 6.3-3.7 9.7-5.1.1-10.1.3-15.2.4-3.3.1-6.9.2-9.6 2.1-5.2 3.6-.7 6.1-1.3 9.6-.7 4.2-4.9 5.1-9 5.1-14.1.1-27.7 4.6-41.5 7.3s-28.9 3.5-41.2-3.4c-.8-.5-1.7-1-2-2-.6-1.6.9-3.2 2.3-4.2 3.2-2.2 6.7-3.7 10.5-4.5 2.2-.5 4.5-.8 6.5-2 1.9-1.2 3.3-3.7 2.3-5.8-32.1 2-64.1 4.8-96 8.4-41.1 4.8-81.8 12.9-123 15.9h-.4c-2.9-2.9-5.5-6-7.9-9.3.2-.2.4-.5.6-.7 2-2.2 5-3.2 7.8-4.1 15.9-4.9 32.4-7.4 48.8-9.9 81.6-12.3 164.2-21.1 246.8-15.3 8.4.6 16.8 1.5 25.2 2.7z"
           opacity="0.24"
         />
@@ -58,7 +56,7 @@ function MotivationIllustration({ ...other }) {
             y2="312.5"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor={PRIMARY_LIGHTER} />
+            <stop stopColor={PRIMARY_LIGHT} />
             <stop offset="1" stopColor={PRIMARY_DARK} />
           </linearGradient>
         </defs>

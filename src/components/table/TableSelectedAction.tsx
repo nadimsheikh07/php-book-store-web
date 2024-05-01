@@ -39,7 +39,7 @@ export default function TableSelectedAction({
         zIndex: 9,
         height: 58,
         position: 'absolute',
-        bgcolor: 'primary.lighter',
+        bgcolor: 'primary.light',
         ...(dense && {
           height: 38,
         }),

@@ -16,7 +16,6 @@ function ForbiddenIllustration({ ...other }) {
 
   const PRIMARY_DARK = theme.palette.primary.dark;
 
-  const PRIMARY_DARKER = theme.palette.primary.darker;
 
   return (
     <Box {...other}>
@@ -58,7 +57,7 @@ function ForbiddenIllustration({ ...other }) {
         />
 
         <path
-          fill={PRIMARY_DARKER}
+          fill={PRIMARY_DARK}
           d="M244.945 189.8c-67.6 1.3-77 97-11 111.4 81 11.8 92.7-107.3 11-111.4zm-48.5 56.2c-1-40.4 49.8-63.8 79.9-36.9l-68.3 68.3c-7.5-8.7-11.6-19.9-11.6-31.4zm48.5 48.5c-11.5 0-22.7-4.1-31.4-11.6l68.3-68.3c27 30.1 3.5 80.9-36.9 79.9z"
         />
 

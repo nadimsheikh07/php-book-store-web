@@ -16,8 +16,6 @@ function ComingSoonIllustration({ ...other }) {
 
   const PRIMARY_DARK = theme.palette.primary.dark;
 
-  const PRIMARY_DARKER = theme.palette.primary.darker;
-
   return (
     <Box {...other}>
       <svg width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +34,7 @@ function ComingSoonIllustration({ ...other }) {
         />
 
         <path
-          fill={PRIMARY_DARKER}
+          fill={PRIMARY_DARK}
           d="M210.879 284.9c62.5 0 113.2-4.4 113.2-9.8s-50.7-9.8-113.2-9.8-113.2 4.4-113.2 9.8 50.7 9.8 113.2 9.8z"
           opacity="0.24"
         />
@@ -61,7 +59,7 @@ function ComingSoonIllustration({ ...other }) {
         />
 
         <path
-          fill={PRIMARY_DARKER}
+          fill={PRIMARY_DARK}
           d="M182.079 119.7h-56.9c-1.7 0-3 1.3-3 3V205c0 1.7 1.3 3 3 3h56.9c1.7 0 3-1.3 3-3v-82.3c0-1.6-1.4-3-3-3z"
         />
 
@@ -76,7 +74,7 @@ function ComingSoonIllustration({ ...other }) {
         />
 
         <path
-          fill={PRIMARY_DARKER}
+          fill={PRIMARY_DARK}
           d="M178.379 224c0-1.1-.9-2-2-2h-55.5c-1.1 0-2 .9-2 2v5c0 1.1.9 2 2 2h55.5c1.1 0 2-.9 2-2v-5z"
           opacity="0.48"
         />
@@ -88,7 +86,7 @@ function ComingSoonIllustration({ ...other }) {
         />
 
         <path
-          fill={PRIMARY_DARKER}
+          fill={PRIMARY_DARK}
           d="M73.579 276.7c-.1 1.2-.6 2.4-1.2 3.4-.7 1-1.6 1.9-2.6 2.5-2.3-.7-4.6-1.4-6.9-2.3-1.2-.4-2.3-.9-3.5-1.4-6.5-2.7-12.6-6.2-18.4-10.3-.4-1.1-.7-2.2-.9-3.4-.2-1.1 0-2.3.4-3.4.5-1.1 1.2-2 2.2-2.6 1-.5 1.9-1 2.8-1.6 1.9-1.6 2-4.6 1-6.9-1-2.3-2.8-4.2-4.1-6.3-1.3-2.1-2.2-4.8-1.1-7.1.7-1.4 2-2.5 2.9-3.9 1.6-2.6 1.1-6 .5-9l-2.4-12.3c-.5-2.7-.9-5.8 1.1-7.7 2.7-2.5 7.1-.5 9.7 2 3.2 2.9 5.5 6.5 6.7 10.6 2.5 8.9-1.9 18.9 1.6 27.5 2.3 5.8 7.8 9.7 10.5 15.3 2.6 5.4 2.5 11.3 1.7 16.9z"
         />
 

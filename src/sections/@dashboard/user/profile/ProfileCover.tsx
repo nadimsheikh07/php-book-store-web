@@ -15,7 +15,7 @@ import { CustomAvatar } from '../../../../components/custom-avatar';
 const StyledRoot = styled('div')(({ theme }) => ({
   '&:before': {
     ...bgBlur({
-      color: theme.palette.primary.darker,
+      color: theme.palette.primary.dark,
     }),
     top: 0,
     zIndex: 9,

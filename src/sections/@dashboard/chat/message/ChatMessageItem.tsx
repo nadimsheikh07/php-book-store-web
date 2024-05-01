@@ -74,7 +74,7 @@ export default function ChatMessageItem({ message, conversation, onOpenLightbox 
             bgcolor: 'background.neutral',
             ...(currentUser && {
               color: 'grey.800',
-              bgcolor: 'primary.lighter',
+              bgcolor: 'primary.light',
             }),
             ...(isImage && {
               p: 0,

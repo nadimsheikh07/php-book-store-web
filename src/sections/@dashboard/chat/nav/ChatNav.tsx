@@ -36,7 +36,7 @@ const StyledToggleButton = styled((props) => <IconButton disableRipple {...props
     backgroundColor: theme.palette.primary.main,
     boxShadow: theme.customShadows.primary,
     '&:hover': {
-      backgroundColor: theme.palette.primary.darker,
+      backgroundColor: theme.palette.primary.dark,
     },
   })
 );

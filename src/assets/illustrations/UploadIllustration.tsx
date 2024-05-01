@@ -14,8 +14,6 @@ function UploadIllustration({ ...other }) {
 
   const PRIMARY_DARK = theme.palette.primary.dark;
 
-  const PRIMARY_DARKER = theme.palette.primary.darker;
-
   return (
     <Box {...other}>
       <svg width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +48,7 @@ function UploadIllustration({ ...other }) {
         />
 
         <path
-          fill={PRIMARY_DARKER}
+          fill={PRIMARY_DARK}
           fillRule="nonzero"
           d="M157.592 279.461a4.114 4.114 0 01-.917-3.131l13.196-107.979 1.094-8.97a4.142 4.142 0 014.078-3.635l38.654-.257a4.135 4.135 0 004.108-4.249l-.015-.409a4.14 4.14 0 014.135-4.279h40.619a4.134 4.134 0 014.098 4.682 4.137 4.137 0 003.995 4.682l39.01.996a4.13 4.13 0 013.97 4.831l-19.502 113.909-.368 2.152a4.042 4.042 0 01-.598 1.543l-135.557.114z"
         />
@@ -456,7 +454,7 @@ function UploadIllustration({ ...other }) {
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M85.382 227.302s20.031 6.278 15.546 33.096M97.083 229.547s-2.76 1.86-1.88 4.655M87.39 231.203s1.687-1.716 3.741-.768M95.31 239.832s2.963-1.495 3.728.379M102.638 242.962s-2.224-.176-2.263.897"
@@ -469,35 +467,35 @@ function UploadIllustration({ ...other }) {
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M91.113 247.808s8.353 12.115 9.968 12.647"
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M90.344 249.701L92.293 249.701"
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M92.68 254.132L95.738 254.263"
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M94.542 250.586L94.21 252.179"
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M97.792 255.432L97.732 256.879"
@@ -510,35 +508,35 @@ function UploadIllustration({ ...other }) {
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M111.051 247.808s-8.371 12.115-9.97 12.647"
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M111.82 249.701L109.871 249.701"
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M109.485 254.132L106.426 254.263"
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M107.622 250.586L107.954 252.179"
         />
 
         <path
-          stroke={PRIMARY_DARKER}
+          stroke={PRIMARY_DARK}
           strokeLinecap="round"
           strokeWidth="0.5"
           d="M104.372 255.432L104.432 256.879"

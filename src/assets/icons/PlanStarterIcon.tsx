@@ -12,8 +12,6 @@ function PlanStarterIcon({ ...other }) {
 
   const PRIMARY_DARK = theme.palette.primary.dark;
 
-  const PRIMARY_DARKER = theme.palette.primary.darker;
-
   return (
     <Box {...other}>
       <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +21,7 @@ function PlanStarterIcon({ ...other }) {
               <path fill={PRIMARY_DARK} d="M53.333 17.467H61.666V24.953H53.333z" />
 
               <path
-                fill={PRIMARY_DARKER}
+                fill={PRIMARY_DARK}
                 d="M.935 20.45L25.963 8.015a5.052 5.052 0 014.52.012L60.74 23.263a1.685 1.685 0 01.015 3.001L35.417 39.361a5.052 5.052 0 01-4.694-.029L.893 23.446a1.685 1.685 0 01.042-2.995z"
               />
 

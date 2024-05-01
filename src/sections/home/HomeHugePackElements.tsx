@@ -467,7 +467,9 @@ const cardPost = (
     sx={{
       width: 320,
       borderRadius: 2,
-      boxShadow: (theme) => theme.customShadows.z24,
+      boxShadow: (theme) => {
+        console.log('theme.customShadows.z24',theme)
+      },
     }}
   >
     <CardHeader

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import NextLink from 'next/link';
 // @mui
 import { styled, alpha, useTheme } from '@mui/material/styles';
+
 import { Button, Box, Link, Container, Typography, Stack, Grid } from '@mui/material';
 // routes
 import { PATH_DASHBOARD, PATH_FIGMA_PREVIEW, PATH_FREE_VERSION } from '../../routes/paths';
@@ -21,8 +22,11 @@ import Iconify from '../../components/iconify';
 import { MotionContainer, varFade } from '../../components/animate';
 
 // ----------------------------------------------------------------------
+interface StyledEllipseTopProps {
+  theme: any;
+}
 
-const StyledRoot = styled('div')(({ theme }) => ({
+const StyledRoot = styled('div')<StyledEllipseTopProps>(({ theme }) => ({
   position: 'relative',
   ...bgGradient({
     color: alpha(theme.palette.background.default, theme.palette.mode === 'light' ? 0.9 : 0.94),
@@ -37,7 +41,7 @@ const StyledRoot = styled('div')(({ theme }) => ({
   },
 }));
 
-const StyledDescription = styled('div')(({ theme }) => ({
+const StyledDescription = styled('div')<StyledEllipseTopProps>(({ theme }) => ({
   maxWidth: 480,
   margin: 'auto',
   display: 'flex',
@@ -48,7 +52,7 @@ const StyledDescription = styled('div')(({ theme }) => ({
   height: '100%',
 }));
 
-const StyledGradientText = styled(m.h1)(({ theme }) => ({
+const StyledGradientText = styled(m.h1)<StyledEllipseTopProps>(({ theme }) => ({
   ...textGradient(
     `300deg, ${theme.palette.primary.main} 0%, ${theme.palette.warning.main} 25%, ${theme.palette.primary.main} 50%, ${theme.palette.warning.main} 75%, ${theme.palette.primary.main} 100%`
   ),
@@ -66,7 +70,7 @@ const StyledGradientText = styled(m.h1)(({ theme }) => ({
   },
 }));
 
-const StyledEllipseTop = styled('div')(({ theme }) => ({
+const StyledEllipseTop = styled('div')<StyledEllipseTopProps>(({ theme }) => ({
   position: 'absolute',
   width: 480,
   height: 480,
@@ -75,10 +79,10 @@ const StyledEllipseTop = styled('div')(({ theme }) => ({
   borderRadius: '50%',
   filter: 'blur(100px)',
   WebkitFilter: 'blur(100px)',
-  backgroundColor: alpha(theme.palette.primary.darker, 0.12),
+  backgroundColor: alpha(theme.palette.primary.dark, 0.12),
 }));
 
-const StyledEllipseBottom = styled('div')(({ theme }) => ({
+const StyledEllipseBottom = styled('div')<StyledEllipseTopProps>(({ theme }) => ({
   position: 'absolute',
   height: 400,
   bottom: -200,
@@ -87,7 +91,7 @@ const StyledEllipseBottom = styled('div')(({ theme }) => ({
   borderRadius: '50%',
   filter: 'blur(100px)',
   WebkitFilter: 'blur(100px)',
-  backgroundColor: alpha(theme.palette.primary.darker, 0.08),
+  backgroundColor: alpha(theme.palette.primary.dark, 0.08),
 }));
 
 // ----------------------------------------------------------------------

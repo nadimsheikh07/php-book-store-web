@@ -12,8 +12,6 @@ function PlanFreeIcon({ ...other }) {
 
   const PRIMARY_DARK = theme.palette.primary.dark;
 
-  const PRIMARY_DARKER = theme.palette.primary.darker;
-
   return (
     <Box {...other}>
       <svg width="100%" height="100%" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +19,7 @@ function PlanFreeIcon({ ...other }) {
           <path fill={PRIMARY_DARK} d="M53.333 17.5H61.666V25H53.333z" />
 
           <path
-            fill={PRIMARY_DARKER}
+            fill={PRIMARY_DARK}
             d="M.935 20.489l25.028-12.46a5.044 5.044 0 014.52.012L60.74 23.307a1.69 1.69 0 01.015 3.007l-25.338 13.12a5.044 5.044 0 01-4.694-.028L.893 23.49a1.69 1.69 0 01.042-3.001z"
           />
 
