@@ -104,7 +104,7 @@ function Searchbar() {
       group: group && group.length > 1 ? group[0] : option.subheader,
       title: option.title,
       path: option.path,
-      indexKey: 'minimal',
+      indexKey: 'php-book-store',
     };
   });
 

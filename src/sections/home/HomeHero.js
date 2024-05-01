@@ -164,7 +164,7 @@ function Description() {
             repeat: Infinity,
           }}
         >
-          Minimal
+          Php Book Store
         </StyledGradientText>
       </m.div>
 

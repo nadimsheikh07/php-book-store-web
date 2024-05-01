@@ -64,7 +64,7 @@ export default function HomeMinimal() {
 
           <m.div variants={varFade().inDown}>
             <Typography variant="h2">
-              What minimal <br /> helps you?
+              What Php Book Store <br /> helps you?
             </Typography>
           </m.div>
         </Stack>

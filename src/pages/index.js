@@ -12,10 +12,11 @@ import { foundation, mui, extra } from '../sections/_examples/config-navigation'
 import axiosInstance from 'src/utils/axios';
 import React, { useEffect, useState } from 'react';
 import BookCard from 'src/sections/_examples/BookCard';
+import MainCustomerLayout from 'src/layouts/mainCustomer/MainCustomerLayout';
 
 // ----------------------------------------------------------------------
 
-Home.getLayout = (page) => <MainLayout>{page}</MainLayout>;
+Home.getLayout = (page) => <MainCustomerLayout>{page}</MainCustomerLayout>;
 
 // ----------------------------------------------------------------------
 

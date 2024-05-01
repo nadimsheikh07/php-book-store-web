@@ -64,7 +64,7 @@ export default function Textfields({ variant }) {
           required
           fullWidth
           label="Activated"
-          defaultValue="Hello Minimal"
+          defaultValue="Hello Php Book Store"
         />
 
         <TextField
@@ -80,7 +80,7 @@ export default function Textfields({ variant }) {
           disabled
           fullWidth
           label="Disabled"
-          defaultValue="Hello Minimal"
+          defaultValue="Hello Php Book Store"
         />
       </Block>
 
@@ -103,7 +103,7 @@ export default function Textfields({ variant }) {
           disabled
           fullWidth
           label="Disabled"
-          defaultValue="Hello Minimal"
+          defaultValue="Hello Php Book Store"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -170,7 +170,7 @@ export default function Textfields({ variant }) {
           variant={variant}
           fullWidth
           label="Error"
-          defaultValue="Hello Minimal"
+          defaultValue="Hello Php Book Store"
           helperText="Incorrect entry."
         />
 
@@ -179,7 +179,7 @@ export default function Textfields({ variant }) {
           error
           fullWidth
           label="Error"
-          defaultValue="Hello Minimal"
+          defaultValue="Hello Php Book Store"
           helperText="Incorrect entry."
         />
       </Block>

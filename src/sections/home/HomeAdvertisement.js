@@ -56,7 +56,7 @@ function Description() {
         sx={{ color: 'common.white', mb: 5, typography: 'h2' }}
       >
         Get started with
-        <br /> minimal kit today
+        <br /> Php Book Store kit today
       </Box>
 
       <Stack

@@ -11,7 +11,7 @@ import getVariant from '../getVariant';
 
 // ----------------------------------------------------------------------
 
-const TEXT = 'Minimals';
+const TEXT = 'Php Book Store';
 
 const IMG = [
   _mock.image.cover(2),

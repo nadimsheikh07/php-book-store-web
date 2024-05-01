@@ -38,7 +38,7 @@ Editor.propTypes = {
 };
 
 export default function Editor({
-  id = 'minimal-quill',
+  id = 'php-book-store-quill',
   error,
   value,
   onChange,
