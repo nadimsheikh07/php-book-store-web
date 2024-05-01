@@ -52,7 +52,7 @@ export default function BookCard({ item }) {
           <Rating size="small" value={4} precision={0.1} readOnly />
 
           <Typography variant="p" sx={{ p: 2, textAlign: 'center' }}>
-            {rate}
+            ${rate}
           </Typography>
         </Stack>
       </Paper>
