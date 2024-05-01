@@ -12,12 +12,12 @@ const navConfig = [
     title: 'Home',
     icon: <Iconify icon="eva:home-fill" />,
     path: '/',
-  },
+  },  
   {
-    title: 'Login',
-    icon: <Iconify icon="eva:book-open-fill" />,
-    path: PATH_AUTH.login,
-  },
+    title: 'Cart',
+    icon: <Iconify icon="eva:home-fill" />,
+    path: '/cart',
+  },  
 ];
 
 export default navConfig;

@@ -83,7 +83,12 @@ export function AuthProvider({ children }) {
           type: 'INITIAL',
           payload: {
             isAuthenticated: true,
-            user,
+            user: {
+              ...user,
+              displayName: user?.name,
+              photoURL: user?.picture,
+              role: 'customer',
+            },
           },
         });
       } else {
@@ -124,18 +129,22 @@ export function AuthProvider({ children }) {
     dispatch({
       type: 'LOGIN',
       payload: {
-        user,
+        user: {
+          ...user,
+          displayName: user?.name,
+          photoURL: user?.picture,
+          role: 'customer',
+        },
       },
     });
   }, []);
 
   // REGISTER
-  const register = useCallback(async (email, password, firstName, lastName) => {
+  const register = useCallback(async (email, password, name) => {
     const response = await axios.post('/api/auth/signup', {
       email,
       password,
-      firstName,
-      lastName,
+      name,
     });
     const { accessToken, user } = response.data;
 
@@ -144,7 +153,12 @@ export function AuthProvider({ children }) {
     dispatch({
       type: 'REGISTER',
       payload: {
-        user,
+        user: {
+          ...user,
+          displayName: user?.name,
+          photoURL: user?.picture,
+          role: 'customer',
+        },
       },
     });
   }, []);

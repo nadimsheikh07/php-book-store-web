@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Box, Button, AppBar, Toolbar, Container, Link } from '@mui/material';
+import { Box, Button, AppBar, Toolbar, Container, Link, Typography, MenuItem } from '@mui/material';
 // hooks
 import useOffSetTop from '../../hooks/useOffSetTop';
 import useResponsive from '../../hooks/useResponsive';
@@ -10,7 +10,7 @@ import { bgBlur } from '../../utils/cssStyles';
 // config
 import { HEADER } from '../../config-global';
 // routes
-import { PATH_DOCS, PATH_MINIMAL_ON_STORE } from '../../routes/paths';
+import { PATH_AUTH, PATH_DOCS, PATH_MINIMAL_ON_STORE } from '../../routes/paths';
 // components
 import Logo from '../../components/logo';
 import Label from '../../components/label';
@@ -18,15 +18,38 @@ import Label from '../../components/label';
 import NavMobile from './nav/mobile';
 import navConfig from './nav/config-navigation';
 import NavDesktop from './nav/desktop';
-
+import { useAuthContext } from 'src/auth/useAuthContext';
+import { useSnackbar } from 'src/components/snackbar';
+import { useRouter } from 'next/router';
 // ----------------------------------------------------------------------
 
 export default function Header() {
   const theme = useTheme();
+  const { replace, push } = useRouter();
+  const { user, logout } = useAuthContext();
+  const { enqueueSnackbar } = useSnackbar();
 
   const isDesktop = useResponsive('up', 'md');
 
   const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);
+
+  const handleLogout = async () => {
+    try {
+      logout();
+      replace(PATH_PAGE.home);
+    } catch (error) {
+      console.error(error);
+      enqueueSnackbar('Unable to logout!', { variant: 'error' });
+    }
+  };
+  const handleLogin = async () => {
+    try {
+      push(PATH_AUTH.login);
+    } catch (error) {
+      console.error(error);
+      enqueueSnackbar('Unable to open login!', { variant: 'error' });
+    }
+  };
 
   return (
     <AppBar color="transparent" sx={{ boxShadow: 0 }}>
@@ -66,6 +89,29 @@ export default function Header() {
           {isDesktop && <NavDesktop isOffset={isOffset} data={navConfig} />}
 
           {!isDesktop && <NavMobile isOffset={isOffset} data={navConfig} />}
+
+
+          <Box sx={{ my: 1.5, px: 2.5 }}>
+            {user && <Typography variant="subtitle2" noWrap>
+              {user?.displayName}
+            </Typography>}
+
+            {user && <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
+              {user?.email}
+            </Typography>}
+
+
+            
+
+          </Box>
+
+          {user && <Typography variant="subtitle2" noWrap onClick={handleLogout}>
+              Logout
+            </Typography>}
+
+          {!user && <Typography variant="subtitle2" noWrap onClick={handleLogin}>
+              Login
+            </Typography>}
         </Container>
       </Toolbar>
 
