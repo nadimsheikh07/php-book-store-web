@@ -10,7 +10,7 @@ import MainLayout from '../layouts/main';
 import { ComponentHero, ComponentCard } from '../sections/_examples';
 import { foundation, mui, extra } from '../sections/_examples/config-navigation';
 import axiosInstance from 'src/utils/axios';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import BookCard from 'src/sections/_examples/BookCard';
 
 // ----------------------------------------------------------------------
@@ -21,23 +21,43 @@ Home.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export default function Home() {
 
-  const [books, setBooks] = React.useState([]);
+  const [books, setBooks] = useState([]);
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(20);
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
 
-  const getBookData = async () => {
-    await axiosInstance.get("/api/books").then((response) => {
-      const { status, data } = response
-      console.log('response', response);
+  const fetchBooks = async () => {
+    setLoading(true);
+    try {
+      const response = await axiosInstance.get(`/api/books?page=${page}&page_size=${pageSize}`);
+      const { data } = response.data;
+      setBooks((prevBooks) => [...prevBooks, ...data]);
+      setPage((prevPage) => prevPage + 1);
+      setHasMore(data.length > 0);
+    } catch (error) {
+      console.error('Error fetching books:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-      if (status == 200) {
-        setBooks(data.data)
-      }
-    });
-  }
+  useEffect(() => {
+    fetchBooks();
+  }, []);
 
+  const handleScroll = () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 5) {
+      fetchBooks();
+    }
+  };
 
-  React.useEffect(() => {
-    getBookData()
-  }, [])
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
 
   return (
     <>
@@ -63,6 +83,9 @@ export default function Home() {
               <BookCard key={item.name} item={item} />
             ))}
           </Grid>
+
+          {loading && <Typography>Loading...</Typography>}
+          {!loading && !hasMore && <Typography>No more books to load</Typography>}
         </Stack>
       </Container>
     </>
