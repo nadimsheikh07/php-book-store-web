@@ -18,7 +18,7 @@ export default function MaintenancePage() {
   return (
     <>
       <Head>
-        <title> Maintenance | Minimal UI</title>
+        <title> Maintenance | PHP BOOK STORE</title>
       </Head>
 
       <Stack sx={{ alignItems: 'center' }}>

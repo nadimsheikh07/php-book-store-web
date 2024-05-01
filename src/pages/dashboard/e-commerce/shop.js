@@ -92,7 +92,7 @@ export default function EcommerceShopPage() {
   return (
     <>
       <Head>
-        <title> Ecommerce: Shop | Minimal UI</title>
+        <title> Ecommerce: Shop | PHP BOOK STORE</title>
       </Head>
 
       <FormProvider methods={methods}>

@@ -1,93 +1,73 @@
-import { m, useScroll, useSpring } from 'framer-motion';
+import PropTypes from 'prop-types';
+import orderBy from 'lodash/orderBy';
 // next
 import Head from 'next/head';
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Box } from '@mui/material';
+import { Container, Typography, Stack, Link, Box, Divider } from '@mui/material';
 // layouts
 import MainLayout from '../layouts/main';
 // sections
-import {
-  HomeHero,
-  HomeMinimal,
-  HomeDarkMode,
-  HomeLookingFor,
-  HomeForDesigner,
-  HomeColorPresets,
-  HomePricingPlans,
-  HomeAdvertisement,
-  HomeCleanInterfaces,
-  HomeHugePackElements,
-} from '../sections/home';
+import { ComponentHero, ComponentCard } from '../sections/_examples';
+import { foundation, mui, extra } from '../sections/_examples/config-navigation';
 
 // ----------------------------------------------------------------------
 
-HomePage.getLayout = (page) => <MainLayout> {page} </MainLayout>;
+Home.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 // ----------------------------------------------------------------------
 
-export default function HomePage() {
-  const theme = useTheme();
-
-  const { scrollYProgress } = useScroll();
-
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
-  const progress = (
-    <m.div
-      style={{
-        top: 0,
-        left: 0,
-        right: 0,
-        height: 3,
-        zIndex: 1999,
-        position: 'fixed',
-        transformOrigin: '0%',
-        backgroundColor: theme.palette.primary.main,
-        scaleX,
-      }}
-    />
-  );
-
+export default function Home() {
   return (
     <>
       <Head>
-        <title> The starting point for your next project | Minimal UI</title>
+        <title> Components Overview | PHP BOOK STORE</title>
       </Head>
 
-      {progress}
+      <ComponentHero />
 
-      <HomeHero />
+      <Container sx={{ pt: 10, pb: 15 }}>
 
-      <Box
-        sx={{
-          overflow: 'hidden',
-          position: 'relative',
-          bgcolor: 'background.default',
-        }}
-      >
-        <HomeMinimal />
+        <Divider sx={{ borderStyle: 'dashed', my: 8 }} />
 
-        <HomeHugePackElements />
+        <Stack spacing={3}>
+          <Stack spacing={1}>
+            <Typography variant="h5">Extra Components</Typography>
 
-        <HomeForDesigner />
+            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+              Some custom components / use 3rd party dependencies (chart, map, editor…).
+            </Typography>
+          </Stack>
 
-        <HomeDarkMode />
-
-        <HomeColorPresets />
-
-        <HomeCleanInterfaces />
-
-        <HomePricingPlans />
-
-        <HomeLookingFor />
-
-        <HomeAdvertisement />
-      </Box>
+          <Grid>
+            {extra.map((item) => (
+              <ComponentCard key={item.name} item={item} />
+            ))}
+          </Grid>
+        </Stack>
+      </Container>
     </>
+  );
+}
+
+// ----------------------------------------------------------------------
+
+Grid.propTypes = {
+  children: PropTypes.node,
+};
+
+function Grid({ children }) {
+  return (
+    <Box
+      display="grid"
+      gridTemplateColumns={{
+        xs: 'repeat(2, 1fr)',
+        sm: 'repeat(3, 1fr)',
+        md: 'repeat(4, 1fr)',
+        lg: 'repeat(6, 1fr)',
+      }}
+      gap={2.5}
+    >
+      {children}
+    </Box>
   );
 }

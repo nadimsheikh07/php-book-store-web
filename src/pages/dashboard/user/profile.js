@@ -81,7 +81,7 @@ export default function UserProfilePage() {
   return (
     <>
       <Head>
-        <title> User: Profile | Minimal UI</title>
+        <title> User: Profile | PHP BOOK STORE</title>
       </Head>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

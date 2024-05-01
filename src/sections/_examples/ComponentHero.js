@@ -48,14 +48,14 @@ export default function ComponentHero() {
         <Stack spacing={3}>
           <m.div variants={varFade().inUp}>
             <Typography variant="h3" component="h1">
-              Components
+              Books
             </Typography>
           </m.div>
 
           <m.div variants={varFade().inUp}>
             <Typography sx={{ color: 'text.secondary' }}>
-              With huge resource pack making deployment
-              <br /> easy and expanding more effectively
+              Rows of shelves stretch endlessly, adorned with colorful spines, 
+              <br/>whispering tales of distant lands and timeless wisdom.
             </Typography>
           </m.div>
         </Stack>

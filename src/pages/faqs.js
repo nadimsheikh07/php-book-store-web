@@ -17,7 +17,7 @@ export default function FaqsPage() {
   return (
     <>
       <Head>
-        <title> Faqs | Minimal UI</title>
+        <title> Faqs | PHP BOOK STORE</title>
       </Head>
 
       <FaqsHero />

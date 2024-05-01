@@ -15,7 +15,7 @@ export default function ChatPage() {
   return (
     <>
       <Head>
-        <title> Chat | Minimal UI</title>
+        <title> Chat | PHP BOOK STORE</title>
       </Head>
 
       <Chat />

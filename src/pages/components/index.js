@@ -20,7 +20,7 @@ export default function ComponentsOverviewPage() {
   return (
     <>
       <Head>
-        <title> Components Overview | Minimal UI</title>
+        <title> Components Overview | PHP BOOK STORE</title>
       </Head>
 
       <ComponentHero />

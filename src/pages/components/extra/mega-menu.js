@@ -29,7 +29,7 @@ export default function DemoMegaMenuPage() {
   return (
     <>
       <Head>
-        <title> Extra Components: Mega Menu | Minimal UI</title>
+        <title> Extra Components: Mega Menu | PHP BOOK STORE</title>
       </Head>
 
       <Box

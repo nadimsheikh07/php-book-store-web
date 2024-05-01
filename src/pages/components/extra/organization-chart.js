@@ -27,7 +27,7 @@ export default function DemoOrganizationalChartPage() {
   return (
     <>
       <Head>
-        <title> Extra Components: Organizational Chart | Minimal UI</title>
+        <title> Extra Components: Organizational Chart | PHP BOOK STORE</title>
       </Head>
 
       <Box

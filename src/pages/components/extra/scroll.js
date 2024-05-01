@@ -20,7 +20,7 @@ export default function DemoScrollbarPage() {
   return (
     <>
       <Head>
-        <title> Extra Components: Scrollbar | Minimal UI</title>
+        <title> Extra Components: Scrollbar | PHP BOOK STORE</title>
       </Head>
 
       <Box

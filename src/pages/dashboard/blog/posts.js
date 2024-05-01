@@ -62,7 +62,7 @@ export default function BlogPostsPage() {
   return (
     <>
       <Head>
-        <title> Blog: Posts | Minimal UI</title>
+        <title> Blog: Posts | PHP BOOK STORE</title>
       </Head>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

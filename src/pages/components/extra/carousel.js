@@ -41,7 +41,7 @@ export default function DemoCarouselsPage() {
   return (
     <>
       <Head>
-        <title> Extra Components: Carousels | Minimal UI</title>
+        <title> Extra Components: Carousels | PHP BOOK STORE</title>
       </Head>
 
       <Box

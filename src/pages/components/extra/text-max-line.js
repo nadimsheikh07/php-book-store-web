@@ -21,7 +21,7 @@ export default function DemoTextMaxLinePage() {
   return (
     <>
       <Head>
-        <title> Extra Components: Text Max Line | Minimal UI</title>
+        <title> Extra Components: Text Max Line | PHP BOOK STORE</title>
       </Head>
 
       <Box

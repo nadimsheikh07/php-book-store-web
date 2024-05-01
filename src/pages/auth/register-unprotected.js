@@ -9,7 +9,7 @@ export default function RegisterUnprotectedPage() {
   return (
     <>
       <Head>
-        <title> Register Unprotected | Minimal UI</title>
+        <title> Register Unprotected | PHP BOOK STORE</title>
       </Head>
 
       <Register />

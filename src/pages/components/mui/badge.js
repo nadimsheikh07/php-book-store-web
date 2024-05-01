@@ -23,7 +23,7 @@ export default function MUIBadgePage() {
   return (
     <>
       <Head>
-        <title> MUI Components: Badge | Minimal UI</title>
+        <title> MUI Components: Badge | PHP BOOK STORE</title>
       </Head>
 
       <Box

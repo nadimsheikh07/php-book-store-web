@@ -21,7 +21,7 @@ export default function MUIChipPage() {
   return (
     <>
       <Head>
-        <title> MUI Components: Chip | Minimal UI</title>
+        <title> MUI Components: Chip | PHP BOOK STORE</title>
       </Head>
 
       <Box

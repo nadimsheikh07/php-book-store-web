@@ -59,16 +59,12 @@ export default function Header() {
             underline="none"
             sx={{ ml: 1 }}
           >
-            <Label color="info"> v4.1.0 </Label>
+            <Label color="info"> Php book store </Label>
           </Link>
 
           <Box sx={{ flexGrow: 1 }} />
 
           {isDesktop && <NavDesktop isOffset={isOffset} data={navConfig} />}
-
-          <Button variant="contained" target="_blank" rel="noopener" href={PATH_MINIMAL_ON_STORE}>
-            Purchase Now
-          </Button>
 
           {!isDesktop && <NavMobile isOffset={isOffset} data={navConfig} />}
         </Container>

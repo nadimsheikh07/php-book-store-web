@@ -58,7 +58,7 @@ export default function MUIPaginationPage() {
   return (
     <>
       <Head>
-        <title> MUI Components: Pagination | Minimal UI</title>
+        <title> MUI Components: Pagination | PHP BOOK STORE</title>
       </Head>
 
       <Box
