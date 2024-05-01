@@ -53,8 +53,7 @@ export default function Header() {
           <Logo />
 
           <Link
-            href={PATH_DOCS.changelog}
-            target="_blank"
+            href="/"
             rel="noopener"
             underline="none"
             sx={{ ml: 1 }}

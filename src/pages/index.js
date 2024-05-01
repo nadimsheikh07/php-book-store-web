@@ -9,6 +9,9 @@ import MainLayout from '../layouts/main';
 // sections
 import { ComponentHero, ComponentCard } from '../sections/_examples';
 import { foundation, mui, extra } from '../sections/_examples/config-navigation';
+import axiosInstance from 'src/utils/axios';
+import React from 'react';
+import BookCard from 'src/sections/_examples/BookCard';
 
 // ----------------------------------------------------------------------
 
@@ -17,6 +20,25 @@ Home.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 // ----------------------------------------------------------------------
 
 export default function Home() {
+
+  const [books, setBooks] = React.useState([]);
+
+  const getBookData = async () => {
+    await axiosInstance.get("/api/books").then((response) => {
+      const { status, data } = response
+      console.log('response', response);
+
+      if (status == 200) {
+        setBooks(data.data)
+      }
+    });
+  }
+
+
+  React.useEffect(() => {
+    getBookData()
+  }, [])
+
   return (
     <>
       <Head>
@@ -26,8 +48,6 @@ export default function Home() {
       <ComponentHero />
 
       <Container sx={{ pt: 10, pb: 15 }}>
-
-        <Divider sx={{ borderStyle: 'dashed', my: 8 }} />
 
         <Stack spacing={3}>
           <Stack spacing={1}>
@@ -39,8 +59,8 @@ export default function Home() {
           </Stack>
 
           <Grid>
-            {extra.map((item) => (
-              <ComponentCard key={item.name} item={item} />
+            {books.map((item) => (
+              <BookCard key={item.name} item={item} />
             ))}
           </Grid>
         </Stack>
