@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { paramCase } from 'change-case';
+import { kebabCase } from 'change-case';
 import parse from 'autosuggest-highlight/parse';
 import match from 'autosuggest-highlight/match';
 // next
@@ -41,7 +41,7 @@ export default function BlogPostsSearch() {
   };
 
   const handleClick = (title) => {
-    push(PATH_DASHBOARD.blog.view(paramCase(title)));
+    push(PATH_DASHBOARD.blog.view(kebabCase(title)));
   };
 
   const handleKeyUp = (event) => {

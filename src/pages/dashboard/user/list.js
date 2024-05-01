@@ -1,4 +1,4 @@
-import { paramCase } from 'change-case';
+import { kebabCase } from 'change-case';
 import { useState } from 'react';
 // next
 import Head from 'next/head';
@@ -181,7 +181,7 @@ export default function UserListPage() {
   };
 
   const handleEditRow = (id) => {
-    push(PATH_DASHBOARD.user.edit(paramCase(id)));
+    push(PATH_DASHBOARD.user.edit(kebabCase(id)));
   };
 
   const handleResetFilter = () => {

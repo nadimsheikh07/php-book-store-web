@@ -1,4 +1,4 @@
-import { paramCase } from 'change-case';
+import { kebabCase } from 'change-case';
 // next
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -29,7 +29,7 @@ export default function UserEditPage() {
     query: { name },
   } = useRouter();
 
-  const currentUser = _userList.find((user) => paramCase(user.name) === name);
+  const currentUser = _userList.find((user) => kebabCase(user.name) === name);
 
   return (
     <>

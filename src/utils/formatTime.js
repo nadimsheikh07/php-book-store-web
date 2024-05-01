@@ -1,17 +1,26 @@
-import { format, getTime, formatDistanceToNow } from 'moment';
+import moment, { format, getTime, formatDistanceToNow } from 'moment';
 
 // ----------------------------------------------------------------------
+
+
+const formatDate = (date, formatString) => {
+  if (date) {
+    return moment(date).format(formatString);
+  } else {
+    return '';
+  }
+};
 
 export function fDate(date, newFormat) {
   const fm = newFormat || 'dd MMM yyyy';
 
-  return date ? format(new Date(date), fm) : '';
+  return date ? formatDate(new Date(date), fm) : '';
 }
 
 export function fDateTime(date, newFormat) {
   const fm = newFormat || 'dd MMM yyyy p';
 
-  return date ? format(new Date(date), fm) : '';
+  return date ? formatDate(new Date(date), fm) : '';
 }
 
 export function fTimestamp(date) {
@@ -21,7 +30,7 @@ export function fTimestamp(date) {
 export function fToNow(date) {
   return date
     ? formatDistanceToNow(new Date(date), {
-        addSuffix: true,
-      })
+      addSuffix: true,
+    })
     : '';
 }

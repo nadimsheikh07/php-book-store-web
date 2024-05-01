@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { paramCase } from 'change-case';
+import { kebabCase } from 'change-case';
 // next
 import NextLink from 'next/link';
 // @mui
@@ -129,7 +129,7 @@ PostContent.propTypes = {
 export function PostContent({ title, view, comment, share, createdAt, index }) {
   const isDesktop = useResponsive('up', 'md');
 
-  const linkTo = PATH_DASHBOARD.blog.view(paramCase(title));
+  const linkTo = PATH_DASHBOARD.blog.view(kebabCase(title));
 
   const latestPostLarge = index === 0;
 

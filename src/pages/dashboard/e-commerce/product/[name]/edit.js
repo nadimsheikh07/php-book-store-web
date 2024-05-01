@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { paramCase } from 'change-case';
+import { kebabCase } from 'change-case';
 // next
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -34,7 +34,7 @@ export default function EcommerceProductEditPage() {
   } = useRouter();
 
   const currentProduct = useSelector((state) =>
-    state.product.products.find((product) => paramCase(product.name) === name)
+    state.product.products.find((product) => kebabCase(product.name) === name)
   );
 
   useEffect(() => {

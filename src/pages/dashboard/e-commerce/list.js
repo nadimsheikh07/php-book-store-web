@@ -1,4 +1,4 @@
-import { paramCase } from 'change-case';
+import { kebabCase } from 'change-case';
 import { useState, useEffect } from 'react';
 // next
 import Head from 'next/head';
@@ -178,11 +178,11 @@ export default function EcommerceProductListPage() {
   };
 
   const handleEditRow = (id) => {
-    push(PATH_DASHBOARD.eCommerce.edit(paramCase(id)));
+    push(PATH_DASHBOARD.eCommerce.edit(kebabCase(id)));
   };
 
   const handleViewRow = (id) => {
-    push(PATH_DASHBOARD.eCommerce.view(paramCase(id)));
+    push(PATH_DASHBOARD.eCommerce.view(kebabCase(id)));
   };
 
   const handleResetFilter = () => {

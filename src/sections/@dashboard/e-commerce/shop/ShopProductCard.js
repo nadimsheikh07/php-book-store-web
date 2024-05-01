@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { paramCase } from 'change-case';
+import { kebabCase } from 'change-case';
 // next
 import NextLink from 'next/link';
 // @mui
@@ -28,7 +28,7 @@ export default function ShopProductCard({ product }) {
 
   const dispatch = useDispatch();
 
-  const linkTo = PATH_DASHBOARD.eCommerce.view(paramCase(name));
+  const linkTo = PATH_DASHBOARD.eCommerce.view(kebabCase(name));
 
   const handleAddCart = async () => {
     const newProduct = {

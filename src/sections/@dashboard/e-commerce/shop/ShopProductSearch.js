@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { paramCase } from 'change-case';
+import { kebabCase } from 'change-case';
 import parse from 'autosuggest-highlight/parse';
 import match from 'autosuggest-highlight/match';
 // next
@@ -41,7 +41,7 @@ export default function ShopProductSearch() {
   };
 
   const handleGotoProduct = (name) => {
-    push(PATH_DASHBOARD.eCommerce.view(paramCase(name)));
+    push(PATH_DASHBOARD.eCommerce.view(kebabCase(name)));
   };
 
   const handleKeyUp = (event) => {
