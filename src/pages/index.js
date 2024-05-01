@@ -3,7 +3,7 @@ import orderBy from 'lodash/orderBy';
 // next
 import Head from 'next/head';
 // @mui
-import { Container, Typography, Stack, Link, Box, Divider } from '@mui/material';
+import { Container, Typography, Stack, Link, Box, Divider, TextField, Select, MenuItem } from '@mui/material';
 // layouts
 import MainLayout from '../layouts/main';
 // sections
@@ -26,11 +26,22 @@ export default function Home() {
   const [pageSize, setPageSize] = useState(20);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState('name');
+  const [sortDirection, setSortDirection] = useState('asc');
 
   const fetchBooks = async () => {
     setLoading(true);
     try {
-      const response = await axiosInstance.get(`/api/books?page=${page}&page_size=${pageSize}`);
+      const response = await axiosInstance.get(`/api/books`, {
+        params: {
+          page: page,
+          page_size: pageSize,
+          search: searchTerm,
+          sort_column: sortBy,
+          sort_direction: sortDirection,
+        }
+      });
       const { data } = response.data;
       setBooks((prevBooks) => [...prevBooks, ...data]);
       setPage((prevPage) => prevPage + 1);
@@ -44,7 +55,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchBooks();
-  }, []);
+  }, [searchTerm, sortBy, sortDirection]);
 
   const handleScroll = () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
@@ -58,11 +69,26 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleSearchChange = (event) => {
+    setBooks([])
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSortChange = (event) => {
+    setBooks([])
+    const selectedSortBy = event.target.value;
+    setSortBy(selectedSortBy);
+    if (selectedSortBy === 'name' || selectedSortBy === 'writer') {
+      setSortDirection('asc');
+    } else if (selectedSortBy === 'rate') {
+      setSortDirection('desc');
+    }
+  };
 
   return (
     <>
       <Head>
-        <title> Components Overview | PHP BOOK STORE</title>
+        <title>PHP BOOK STORE</title>
       </Head>
 
       <ComponentHero />
@@ -71,12 +97,21 @@ export default function Home() {
 
         <Stack spacing={3}>
           <Stack spacing={1}>
-            <Typography variant="h5">Extra Components</Typography>
+            <Typography variant="h5">Search book</Typography>
 
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
               Some custom components / use 3rd party dependencies (chart, map, editor…).
             </Typography>
           </Stack>
+
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <TextField label="Search" variant="outlined" value={searchTerm} onChange={handleSearchChange} />
+            <Select label="Sort By" value={sortBy} onChange={handleSortChange} sx={{ width: 150 }}>
+              <MenuItem value="name">Name-ASC</MenuItem>
+              <MenuItem value="writer">Writer-ASC</MenuItem>
+              <MenuItem value="rate">Price-DESC</MenuItem>
+            </Select>
+          </Box>
 
           <Grid>
             {books.map((item) => (
