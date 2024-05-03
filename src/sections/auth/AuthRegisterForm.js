@@ -18,17 +18,22 @@ export default function AuthRegisterForm() {
   const { register } = useAuthContext();
 
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfPassword, setShowConfPassword] = useState(false);
 
   const RegisterSchema = Yup.object().shape({
     name: Yup.string().required('Name required'),
     email: Yup.string().required('Email is required').email('Email must be a valid email address'),
     password: Yup.string().required('Password is required'),
+    password_confirmation: Yup.string()
+      .required('Password Confirmation is required')
+      .oneOf([Yup.ref('password'), null], 'Passwords must match'), // Ensure password_confirmation matches password
   });
 
   const defaultValues = {
-    name: '',    
+    name: '',
     email: '',
     password: '',
+    password_confirmation: '',
   };
 
   const methods = useForm({
@@ -46,7 +51,7 @@ export default function AuthRegisterForm() {
   const onSubmit = async (data) => {
     try {
       if (register) {
-        await register(data.email, data.password, data.name);
+        await register(data.email, data.password, data.password_confirmation, data.name);
       }
     } catch (error) {
       console.error(error);
@@ -66,7 +71,7 @@ export default function AuthRegisterForm() {
         {!!errors.afterSubmit && <Alert severity="error">{errors.afterSubmit.message}</Alert>}
 
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-          <RHFTextField name="name" label="Name" />          
+          <RHFTextField name="name" label="Name" />
         </Stack>
 
         <RHFTextField name="email" label="Email address" />
@@ -80,6 +85,20 @@ export default function AuthRegisterForm() {
               <InputAdornment position="end">
                 <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
                   <Iconify icon={showPassword ? 'eva:eye-fill' : 'eva:eye-off-fill'} />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+        <RHFTextField
+          name="password_confirmation"
+          label="Password Confirmation"
+          type={showConfPassword ? 'text' : 'password'}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={() => setShowConfPassword(!showConfPassword)} edge="end">
+                  <Iconify icon={showConfPassword ? 'eva:eye-fill' : 'eva:eye-off-fill'} />
                 </IconButton>
               </InputAdornment>
             ),
