@@ -75,7 +75,7 @@ export function AuthProvider({ children }) {
       if (accessToken && isValidToken(accessToken)) {
         setSession(accessToken);
 
-        const response = await axios.get('/auth/profile');
+        const response = await axios.get('auth/profile');
 
         const { user } = response.data;
 
@@ -118,7 +118,7 @@ export function AuthProvider({ children }) {
 
   // LOGIN
   const login = useCallback(async (email, password) => {
-    const response = await axios.post('/auth/signin', {
+    const response = await axios.post('auth/signin', {
       email,
       password,
     });
@@ -141,7 +141,7 @@ export function AuthProvider({ children }) {
 
   // REGISTER
   const register = useCallback(async (email, password, password_confirmation, name) => {
-    const response = await axios.post('/auth/signup', {
+    const response = await axios.post('auth/signup', {
       email,
       password,
       password_confirmation,
