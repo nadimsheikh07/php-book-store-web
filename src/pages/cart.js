@@ -21,7 +21,7 @@ export default function CartPage() {
   const fetchCart = async () => {
     setLoading(true);
     try {
-      const response = await axiosInstance.get(`api/cart`);
+      const response = await axiosInstance.get(`api/carts`);
       setCarts(response.data);
     } catch (error) {
       console.error('Error fetching books:', error);
@@ -33,13 +33,15 @@ export default function CartPage() {
   const deleteCart = async (id) => {
     setLoading(true);
     try {
-      const response = await axiosInstance.delete(`api/cart/${id}`);
-      console.log('deleteCart', response);
+      const response = await axiosInstance.delete(`api/carts/${id}`);
+      const { status } = response
       const { message } = response.data
-      enqueueSnackbar(message, { variant: 'success' });
 
-      fetchCart()
-      
+      if (status == 200) {
+        enqueueSnackbar(message, { variant: 'success' });
+        fetchCart()
+      }
+
     } catch (error) {
       console.error('Error fetching books:', error);
       enqueueSnackbar('Unable to remove!', { variant: 'error' });

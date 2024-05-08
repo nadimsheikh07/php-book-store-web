@@ -32,15 +32,18 @@ export default function BookCard({ item }) {
     setLoading(true);
     try {
 
-      const response = await axiosInstance.post(`api/cart`, {
+      const response = await axiosInstance.post(`api/carts`, {
         book_id: id,
         quantity: 1
       });
+      console.log('response', response)
+      const { status } = response
+      const { message } = response.data
 
-      const { message } = response.data;
-
-
-      enqueueSnackbar(message, { variant: 'success' });
+      if (status == 201) {
+        enqueueSnackbar(message, { variant: 'success' });
+        fetchCart()
+      }
 
     } catch (error) {
       console.error('Error fetching books:', error);
