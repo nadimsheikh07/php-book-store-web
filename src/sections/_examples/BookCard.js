@@ -2,11 +2,14 @@ import PropTypes from 'prop-types';
 import { m } from 'framer-motion';
 // @mui
 import { alpha } from '@mui/material/styles';
-import { Link, Paper, Typography, CardActionArea, Rating, Stack } from '@mui/material';
+import { Link, Paper, Typography, CardActionArea, Rating, Stack, Button } from '@mui/material';
 // components
 import Image from '../../components/image';
 
 import { varHover, varTranHover } from '../../components/animate';
+import { useState } from 'react';
+import axiosInstance from 'src/utils/axios';
+import { useSnackbar } from '../../components/snackbar';
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +23,32 @@ BookCard.propTypes = {
 };
 
 export default function BookCard({ item }) {
-  const { name, cover_image, rate, href } = item;
+  const { id, name, cover_image, rate, href } = item;
+  const [loading, setLoading] = useState(false);
+
+  const { enqueueSnackbar } = useSnackbar();
+
+  const addToCart = async (id) => {
+    setLoading(true);
+    try {
+
+      const response = await axiosInstance.post(`api/cart`, {
+        book_id: id,
+        quantity: 1
+      });
+
+      const { message } = response.data;
+
+
+      enqueueSnackbar(message, { variant: 'success' });
+
+    } catch (error) {
+      console.error('Error fetching books:', error);
+      enqueueSnackbar('Unable to add!', { variant: 'error' });
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <Link href={href} underline="none" target="_blank" rel="noopener">
@@ -54,6 +82,9 @@ export default function BookCard({ item }) {
           <Typography variant="p" sx={{ p: 2, textAlign: 'center' }}>
             ${rate}
           </Typography>
+
+          <Button onClick={() => addToCart(id)}>Add to cart</Button>
+
         </Stack>
       </Paper>
     </Link>
