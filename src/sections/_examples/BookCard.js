@@ -42,12 +42,12 @@ export default function BookCard({ item }) {
 
       if (status == 201) {
         enqueueSnackbar(message, { variant: 'success' });
-        fetchCart()
       }
 
     } catch (error) {
       console.error('Error fetching books:', error);
-      enqueueSnackbar('Unable to add!', { variant: 'error' });
+      const { message } = error
+      enqueueSnackbar(message, { variant: 'error' });
     } finally {
       setLoading(false);
     }

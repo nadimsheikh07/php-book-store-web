@@ -25,6 +25,8 @@ export default function CartPage() {
       setCarts(response.data);
     } catch (error) {
       console.error('Error fetching books:', error);
+      const { message } = error
+      enqueueSnackbar(message, { variant: 'error' });
     } finally {
       setLoading(false);
     }
@@ -44,7 +46,8 @@ export default function CartPage() {
 
     } catch (error) {
       console.error('Error fetching books:', error);
-      enqueueSnackbar('Unable to remove!', { variant: 'error' });
+      const { message } = error
+      enqueueSnackbar(message, { variant: 'error' });
     } finally {
       setLoading(false);
     }
