@@ -9,7 +9,7 @@ import Image from '../../components/image';
 import { varHover, varTranHover } from '../../components/animate';
 import { useState } from 'react';
 import axiosInstance from 'src/utils/axios';
-import { useSnackbar } from '../../components/snackbar';
+import { useSnackbar } from 'src/components/snackbar';
 
 // ----------------------------------------------------------------------
 
